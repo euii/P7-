@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>P71</title>
+    <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=fontawesome">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/7.0.0/normalize.css">
+    <link rel="stylesheet" href="css/src/main.css">
+    <link rel="stylesheet" href="css/src/style.css">
+</head>
+
+<body>
+    <div class="grid">
+        <div class="row">
+            <div id="navbar" class="col-3">
+                <div id="navmenu_bar" class="row menu-bar nav-backgroud">
+                    <div class="col-10"><input type="text" name="" id="" data-bind="textInput: keyword , event: {input: search}"></div>
+                    <div class="col-2" style="padding-left:.5em; padding-top: .3em;"><span class="fontawesome-filter"></span></div>
+                </div>
+                <div class="row" style="background-color:white" data-bind="foreach: localsList">
+                    <div class="col-12 divformat" data-bind="css:{devselected : $data.clicked()}">
+                        <a target="blank" data-bind="click: $root.jumpMarker"><span data-bind="text:$data.name"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div id="main" class="col-9">
+                <div id="menu_bar" class="row menu-bar nav-backgroud ">
+                    <div class="col-12" style="padding: .3em;">
+                        <span id="menu_button" class="fontawesome-reorder"></span>
+                    </div>
+                </div>
+                <div class="row content">
+                    <div class="col-12">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/dist/jquery-3.2.1.min.js"></script>
+    <script src="js/dist/knockout-3.4.2.js"></script>
+    <script src="js/src/main.js"></script>
+    <script src="js/src/mapfunctions.js"></script>
+    <script src="js/src/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5xaYjPNeY3TE5ciPmNGIPG_XfA0QZMAQ&callback=initMap" async
+        defer></script>
+    <script src="js/src/app.js"></script>
+</body>
+
+</html>
