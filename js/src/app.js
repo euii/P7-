@@ -12,6 +12,7 @@ var localViewModel = function () {
 
     self.keyword = ko.observable("");
     self.localsList = ko.observableArray();
+    //实时搜索
     self.search = function () {
         var keyword = self.keyword();
         console.log(keyword);
@@ -19,6 +20,7 @@ var localViewModel = function () {
         filterMapMarkers(markers,map,self.localsList());
 
     };
+    //标志跳动
     self.jumpMarker = function (place) {
         console.log(place.clicked());
         place.clicked(!place.clicked());
@@ -31,7 +33,7 @@ var localViewModel = function () {
         }
 
     };
-
+    //生成左侧列表
     self.makeLocalList = function (locations,keyword) {
         keyword = (typeof keyword !== 'undefined') ?  keyword : "";
         self.localsList([]);
