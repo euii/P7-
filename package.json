@@ -1,0 +1,29 @@
+{
+  "name": "P7",
+  "version": "1.0.0",
+  "description": "P7 project for Udacity !",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/euii/WebsiteOptimization"
+  },
+  "author": {
+    "name": "edwin.w",
+    "email": "im.euii@gmail.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cache": "^0.4.6",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-css-condense": "^1.1.2",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  }
+}
