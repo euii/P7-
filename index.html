@@ -21,7 +21,7 @@
                     <div class="col-2" style="padding-left:.5em; padding-top: .3em;"><span class="fontawesome-filter"></span></div>
                 </div>
                 <div class="row" style="background-color:white" data-bind="foreach: localsList">
-                    <div class="col-12 divformat" data-bind="css:{devselected : $data.clicked()}">
+                    <div class="col-12 divformat" data-bind="css:{ devselected : $data.id == $root.clicked()}">
                         <a target="blank" data-bind="click: $root.jumpMarker"><span data-bind="text:$data.name"></span></a>
                     </div>
                 </div>
@@ -52,6 +52,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5xaYjPNeY3TE5ciPmNGIPG_XfA0QZMAQ&callback=initMap" async
         defer onerror="mapError()"></script>
     <script src="js/dist/app.min.js"></script>
+    <!-- <script src="js/src/app.js"></script> -->
 </body>
 
 </html>

@@ -19,11 +19,21 @@ function populateInfoWindow(marker, infowindow) {
 
 }
 
-function markerBounce(marker) {
+/**
+* @description This function toggle marker bounce
+* @param {object} marker - google.maps.Marker
+* @param {object[]} infowindow - google.maps.InfoWindow
+*/
+function markerBounce(marker,markers) {
     //toggleBounce
     if (marker.getAnimation() !== null) {
         marker.setAnimation(null);
     } else {
+        if (markers instanceof Array) {
+            markers.forEach (function (t) {
+                if (t.getAnimation() !== null) t.setAnimation(null);
+            })
+        }
         marker.setAnimation(google.maps.Animation.BOUNCE);
     }
 }

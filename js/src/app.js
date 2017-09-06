@@ -2,7 +2,7 @@
 function Place(info) {
     var self = this;
     self.name = info.title;
-    self.clicked = ko.observable(false);
+    // self.clicked = ko.observable(false);
     self.location = info.location;
     self.id = info.id;
 }
@@ -12,6 +12,7 @@ var localViewModel = function () {
 
     self.keyword = ko.observable("");
     self.localsList = ko.observableArray();
+    self.clicked = ko.observable(-1);
     //左侧菜单
     self.openLeftNav = ko.observable(false);
 
@@ -33,13 +34,19 @@ var localViewModel = function () {
     };
     //标志跳动
     self.jumpMarker = function (place) {
-        console.log(place.clicked());
-        place.clicked(!place.clicked());
+        // console.log(place.clicked());
+        // place.clicked(!place.clicked());
         var marker = markers[place.id];
         console.log("marker"+marker);
         populateInfoWindow(marker,largeInfoWindow);
-        markerBounce(marker);
-        if (place.clicked()) {
+        markerBounce(marker,markers);
+        //点选菜单底色变蓝
+        if (self.clicked() === place.id){
+            self.clicked(-1);
+        }else{
+            self.clicked(place.id);
+        }
+        if (self.clicked() >= 0) {
             getPlaceImage(largeInfoWindow,marker.title,marker);
         }
 
