@@ -40,9 +40,21 @@
             </div>
         </div>
     </div>
+    <script>
+        var menu = document.querySelector('#menu_button');
+        var main = document.querySelector('#main');
+        var drawer = document.querySelector('#navbar');
+
+        menu.addEventListener('click', function(e) {
+        drawer.classList.toggle('open');
+        e.stopPropagation();
+        });
+        main.addEventListener('click', function() {
+        drawer.classList.remove('open');
+        });
+    </script>
     <script src="js/dist/jquery-3.2.1.min.js"></script>
     <script src="js/dist/knockout-3.4.2.js"></script>
-    <script src="js/src/main.js"></script>
     <script src="js/src/mapfunctions.js"></script>
     <script src="js/src/map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5xaYjPNeY3TE5ciPmNGIPG_XfA0QZMAQ&callback=initMap" async
