@@ -12,6 +12,17 @@ var localViewModel = function () {
 
     self.keyword = ko.observable("");
     self.localsList = ko.observableArray();
+    //左侧菜单
+    self.openLeftNav = ko.observable(false);
+
+    self.toggleLeftNav = function() {
+        self.openLeftNav(!self.openLeftNav())
+    }
+
+    self.closeLefNav = function() {
+        self.openLeftNav(false);
+    }
+
     //实时搜索
     self.search = function () {
         var keyword = self.keyword();

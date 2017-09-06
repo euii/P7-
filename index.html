@@ -15,7 +15,7 @@
 <body>
     <div class="grid">
         <div class="row">
-            <div id="navbar" class="col-3">
+            <div id="navbar" class="col-3" data-bind="css:{open: openLeftNav }">
                 <div id="navmenu_bar" class="row menu-bar nav-backgroud">
                     <div class="col-10"><input type="text" name="" id="" data-bind="textInput: keyword , event: {input: search}"></div>
                     <div class="col-2" style="padding-left:.5em; padding-top: .3em;"><span class="fontawesome-filter"></span></div>
@@ -26,10 +26,10 @@
                     </div>
                 </div>
             </div>
-            <div id="main" class="col-9">
+            <div id="main" class="col-9" data-bind="click: closeLefNav">
                 <div id="menu_bar" class="row menu-bar nav-backgroud ">
                     <div class="col-12" style="padding: .3em;">
-                        <span id="menu_button" class="fontawesome-reorder"></span>
+                        <span id="menu_button" class="fontawesome-reorder" data-bind="click: toggleLeftNav, clickBubble: false"></span>
                     </div>
                 </div>
                 <div class="row content">
@@ -41,17 +41,6 @@
         </div>
     </div>
     <script>
-        var menu = document.querySelector('#menu_button');
-        var main = document.querySelector('#main');
-        var drawer = document.querySelector('#navbar');
-
-        menu.addEventListener('click', function(e) {
-        drawer.classList.toggle('open');
-        e.stopPropagation();
-        });
-        main.addEventListener('click', function() {
-        drawer.classList.remove('open');
-        });
         function mapError() {
             alert('The google map could not be loaded.');
         }
