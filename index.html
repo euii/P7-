@@ -52,13 +52,16 @@
         main.addEventListener('click', function() {
         drawer.classList.remove('open');
         });
+        function mapError() {
+            alert('The google map could not be loaded.');
+        }
     </script>
     <script src="js/dist/jquery-3.2.1.min.js"></script>
     <script src="js/dist/knockout-3.4.2.js"></script>
     <script src="js/dist/mapfunctions.min.js"></script>
     <script src="js/dist/map.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5xaYjPNeY3TE5ciPmNGIPG_XfA0QZMAQ&callback=initMap" async
-        defer></script>
+        defer onerror="mapError()"></script>
     <script src="js/dist/app.min.js"></script>
 </body>
 
